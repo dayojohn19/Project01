@@ -9,7 +9,7 @@ def index(request):
     })
 
 def save(request):
-    return render(request, "encyclopedia/index.html", {
+    return render(request, "encyclopedia/save.html", {
         "save": util.save_entry()
     })
 
@@ -24,5 +24,6 @@ def list(request):
         "entries": util.list_entries()
     })
 
-
+def save(request):
+    return render(request, "encyclopedia/save.html")
 
