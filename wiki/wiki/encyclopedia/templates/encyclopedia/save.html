@@ -3,20 +3,35 @@
 {% block body %}
 
 
-    <h1>Post Add Task:</h1>
- <form action="{% url 'save' %}" method="post" >
-      {% csrf_token %}
-      {{ form }}
+    <h1>Post Task:</h1>
+    <form action="{% url 'save' %}" method="post">
+        {% csrf_token %}
+        {{ form }}
         <input type="submit">
- </form>
+    </form>
 
 
-<h1>GET Add Task:</h1>
+<h1>GET  Task:</h1>
  <form action="{% url 'save' %}" method="get" >
-      {% csrf_token %}
+    
       {{ form }}
         <input type="submit">
 </form>
 
+
+    <h1>Add Task:</h1>
+    <form action="">
+        <input type="text", name="task">
+        <input type="submit">
+    </form>
+    <a href="{% url 'save' %}">Create new Page</a>
+    <a href="{% url 'index' %}">View Pages</a>
+
+    <form action="{% url 'save' %}" method="post">
+      {% csrf_token %}
+ {{ create }}
+    <input type="submit">
+    </form>
+    {{price}}
 {% endblock %}
 

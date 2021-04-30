@@ -1,11 +1,11 @@
 {% extends "encyclopedia/layout.html" %}
 
 {% block body %}
-<h1>GET Add Task:</h1>
- <form action="{% url 'save' %}" method="get" >
-      {% csrf_token %}
-      {{form}}
-        <input type="submit">
-</form>
+   <h1>All Get</h1>
+  title = CSS
+    <ul>
+        {% for getentry in get %}
+            <li><a href="{{ getentry }}">{{getentry}}</a></li>
+        {% endfor %}
+    </ul>
 {% endblock %}
-

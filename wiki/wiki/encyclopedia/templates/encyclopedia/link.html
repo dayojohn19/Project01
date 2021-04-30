@@ -5,9 +5,11 @@
 {% endblock %}
 
 {% block body %}
-    <h1>All Pagddesf</h1>
-    <h2>Hello, {{ errorname }}!</h2>
-       <ul>
+    <h1>All Pages</h1>
+    <div>
+    {{ mytext }}
+    </div>
+    <ul>
         {% for entry in entries %}
             <li><a href="{{ entry }}">{{entry}}</a></li>
         {% endfor %}
