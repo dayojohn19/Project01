@@ -1,22 +1,11 @@
 {% extends "encyclopedia/layout.html" %}
 
 {% block body %}
-
-
-    <h1>Post Add Task:</h1>
- <form action="{% url 'save' %}" method="post" >
-      {% csrf_token %}
-      {{ form }}
-        <input type="submit">
- </form>
-
-
 <h1>GET Add Task:</h1>
  <form action="{% url 'save' %}" method="get" >
       {% csrf_token %}
-      {{ form }}
+      {{form}}
         <input type="submit">
 </form>
-
 {% endblock %}
 
