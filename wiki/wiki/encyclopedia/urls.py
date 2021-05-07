@@ -4,13 +4,13 @@ from . import views
 
 urlpatterns = [
     path("", views.index, name="index"),
-    path("wiki/title", views.index, name="index2"),
+    path("wiki/TITLE", views.index, name="index"),
     #go to save Create New Page
     path("wiki/save", views.save, name="save"),
-    path("wiki/get", views.get, name="get"),
-    path("wiki/list", views.list, name="list"),
-    path("wiki/get", views.get, name="get"),
-    path("wiki/<str:name>", views.error, name="error"),
+    path("wiki/<str:title>", views.get, name="get"),
+    path("wiki/<str:title>", views.error, name="name"),
+    path("edit/<str:title>", views.edit, name="edit"),
+    path("wiki/", views.randomPage, name="random")
     
 ]
 

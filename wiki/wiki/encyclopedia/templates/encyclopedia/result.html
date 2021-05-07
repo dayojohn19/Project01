@@ -1,0 +1,16 @@
+{%extends 'encyclopedia/layout.html'%}
+
+
+
+{% block body %}
+    {%  for result in searched%}
+        <p class="p1">Search Result:</p>
+        <ol class="p4">
+            <li><a href=/wiki/{{result}}>{{result}}</a></li>
+        </ol>
+       
+        {%empty%}
+            <p class="p3">Nothing Found</p>
+            {%endfor%}
+            {%endblock%}
+

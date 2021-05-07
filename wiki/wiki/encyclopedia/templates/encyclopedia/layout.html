@@ -7,26 +7,48 @@
         <title>{% block title %}{% endblock %}</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link href="{% static 'encyclopedia/styles.css' %}" rel="stylesheet">
+        <style>
+            .error {
+                color: red;
+            }
+            .p1{
+                font-size: 50px;
+                color: rgb(238, 76, 76);
+            }
+            .p2 {
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                color: royalblue;
+            }
+            .p3 {
+                font-size: 70px;
+                color: slateblue;
+            }
+            .p4 {
+                font-size: 35px;
+                color: rgb(71, 128, 214);
+            }
+
+        </style>
     </head>
     <body>
         <div class="row">
             <div class="sidebar col-lg-2 col-md-3">
                 <h2>Wiki</h2>
 
-                <form method="get"> {% csrf_token %}
-                    <input class="search" type="text" name="q" placeholder="Search Encyclopedia"><action=input>
+                
+
+                <form method="post" action="{% url 'index' %}"> {% csrf_token %} {{form.item}}
                 </form>
                 
                 <div>
-                    <a href="{% url 'index2' %}">Home</a>
+                    <a href="{% url 'index' %}">Home</a>
                 </div>
+
                 <div>
-                    Create New Page
                     <a href="{% url 'save' %}">Create New Page</a>
-                    <a href="{% url 'get' %}">Search Pages</a>
                 </div>
                 <div>
-                    Random Page
+                    <a href="{% url 'random' %}">Random Page</a>
                 </div>
                 {% block nav %}
                 {% endblock %}

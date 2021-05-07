@@ -1,11 +1,17 @@
 {% extends "encyclopedia/layout.html" %}
 
+
+
+
 {% block body %}
-   <h1>All Get</h1>
-  title = CSS
-    <ul>
-        {% for getentry in get %}
-            <li><a href="{{ getentry }}">{{getentry}}</a></li>
-        {% endfor %}
-    </ul>
+<a href="{% url 'index' %}">View Other Pages</a>
+   <h1>Wiki Result About:</h1>
+  
+       <p class="p3">{{title|safe}}
+       {{page|safe}}
+    <a href="/edit/{{title}}">Edit This Page</a></p>
+     
+   <br><br>
+{{time}}
+
 {% endblock %}

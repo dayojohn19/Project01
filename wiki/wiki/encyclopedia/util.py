@@ -2,7 +2,6 @@ import re
 from django import forms
 from django.core.files.base import ContentFile
 from django.core.files.storage import default_storage
-import markdown
 
 def list_entries():
     """
